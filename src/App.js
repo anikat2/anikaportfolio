@@ -10,7 +10,13 @@ import kotlin from './Kotlin_Icon-removebg-preview.png';
 import cplusplus from './cpp_logo-removebg-preview.png';
 import php from './PHP-logo.svg-removebg-preview.png';
 import bouquet from './bouquet.png';
-
+import github from './GitHub-Mark-ea2971cee799-removebg-preview.png';
+import plants from './plants.png';
+import linkedin from './LinkedIn_logo_initials-removebg-preview.png';
+import insta from './insta.png';
+import gmail from './gmaill.png';
+import tiktok from './tiktok-logo-on-transparent-background-free-vector-removebg-preview.png';
+import discord from './discord.png';
 import './App.css';
 
 function App() {
@@ -24,7 +30,7 @@ function App() {
           <img className="branch4" src={branch}/>
           <img className="branch5" src={branch}/>
 
-          <br></br> <br></br><br></br><br></br>
+          <br/><br/><br/><br/>
           <h1>Anika Thakur</h1>
           <h8 className='desc'>FULL STACK DEVELOPER</h8>
         </div>
@@ -36,35 +42,59 @@ function App() {
           <div className='java'>
             <img className="javaimg" src={java}/>
           </div>
+          <div className='java1'>
+            <p>{javaExp()} years</p>
+          </div>
           <div className='python'>
             <img className="pyimg" src={python}/>
+          </div>
+          <div className='py1'>
+            <p>{pyExp()} years</p>
           </div>
           <div className='react'>
             <img className="logoimg" src={logo}/>
           </div>
+          <div className='re1'>
+            <p>{reactExp()} years</p>
+          </div>
           <div className='node'>
             <img className="nodeimg" src={node}/>
+          </div>
+          <div className='n1'>
+            <p>{nodeExp()} years</p>
           </div>
         </div>
         <div className='row2'>
           <div className='sql'>
             <img className="sqlimg" src={sql}/>
           </div>
+          <div className='s1'>
+            <p>{pyExp()} years</p>
+          </div>
           <div className='kotlin'>
             <img className="kotimg" src={kotlin}/>
+          </div>
+          <div className='k1'>
+            <p>{reactExp()} years</p>
           </div>
           <div className='cplusplus'>
             <img className="cimg" src={cplusplus}/>
           </div>
+          <div className='c1'>
+            <p>{reactExp()} years</p>
+          </div>
           <div className='php'>
             <img className="phpimg" src={php}/>
           </div>
+          <div className='p1'>
+            <p>{pyExp()} years</p>
+          </div>
         </div>
       </div>
-      <br></br><br></br><br></br><br></br>
+      <br/><br/><br/><br/>
       <div className='projs'>
         <h2 className='text2'>Highlighted Projects</h2>
-        <br></br>
+        <br/>
         <img className="bouqimg" src={bouquet}/>
         <table className='lockedin'>
           <tr>
@@ -84,10 +114,51 @@ function App() {
         </table>
       </div>
       <div className='contactBar'>
-        <h1>hiiiii</h1>
+        <img className='plantsinarow' src={plants}/>
+        <a href="https://github.com/anikat2" target="_blank" rel="noopener noreferrer">
+          <img className='git' src={github} alt="GitHub"/>
+        </a>
+
+        <p className='gitp'>anikat2</p>
+        <a href="https://www.linkedin.com/in/anika-thakur/" target="_blank" rel="noopener noreferrer">
+          <img className='lin' src={linkedin} alt="LinkedIn"/>
+        </a>
+        <p className='linp'>anika thakur</p>
+        <a href="https://www.instagram.com/anikapikalika/" target="_blank" rel="noopener noreferrer">
+          <img className='insta' src={insta} alt="Instagram"/>
+        </a>
+        <p className='instap'>anikapikalika</p>
+        <a href="mailto:anikathakur212@gmail.com" target="_blank" rel="noopener noreferrer">
+          <img className='gmail' src={gmail} alt="Gmail"/>
+        </a>
+        <p className='gp'>anikathakur212</p>
+        <a href="https://www.tiktok.com/@anikathak" target="_blank" rel="noopener noreferrer">
+          <img className='tik' src={tiktok} alt="TikTok"/>
+        </a>
+        <p className='tikp'>anikathak</p>
+        <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">
+          <img className='disc' src={discord} alt="Discord"/>
+        </a>
+        <p className='discp'>hwisnfocnv</p>
       </div>
     </div>
   );
+}
+
+function javaExp(){
+  return getYear() - 2020;
+}
+function pyExp(){
+  return getYear() - 2021;
+}
+function reactExp(){
+  return getYear() - 2023;
+}
+function nodeExp(){
+  return getYear() - 2022;
+}
+function getYear() {
+  return new Date().getFullYear();
 }
 
 export default App;

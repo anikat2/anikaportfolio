@@ -4,7 +4,6 @@
 
 @font-face {
   font-family: 'tt'; /* Name your font family */
-  font-size: 10vw;
   src: url('./TT\ Ramillas\ Trial\ Light.ttf'); /* Locate the .ttf file within your directory*/
 }
 
@@ -14,8 +13,14 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-
+h1{
+  font-size: 9vw;
+}
+h2{
+  font-size: 6vw;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -40,19 +45,27 @@ code {
   margin-left: -55%;
   margin-top: -5%;
   width: 35%;
+  animation: slide-in 1000ms;
+
 }
 .branch2{
   position: absolute;
   margin-top: -2%;
   margin-left: 5%;
   width: 23%;
+  animation: slide-in2 1000ms;
+
 }
+
 .branch3{
   position: absolute;
   margin-top: 15%;
   margin-left: 40%;
   width: 13%;
   transform: rotate(100deg);
+
+  animation: slide-in3 1000ms;
+
 }
 .branch4{
   position: absolute;
@@ -60,6 +73,7 @@ code {
   margin-left: 28%;
   width: 30%;
   transform: rotate(180deg);
+  animation: slide-in4 1000ms;
 }
 .branch5{
   position: absolute;
@@ -67,16 +81,19 @@ code {
   margin-left: -70%;
   width: 30%;
   transform: rotate(-30deg);
+  animation: slide-in5 1000ms;
 }
 .ivy{
   position: absolute;
   margin-top: 0%;
   margin-left: -50%;
   width: 100%;
+  animation: ivy-flow infinite 5000ms;
 }
 .frameSection{
   position: absolute;
   font-size: xxx-large;
+
 }
 .text1{
   width: 100%;
@@ -93,6 +110,29 @@ code {
   background-color: aliceblue;
   border-radius: 50%;
   display: inline-block;
+  z-index: 1;
+}
+p{
+  font-weight: 400;
+}
+.java:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
+}
+.java1{
+  position: absolute;
+  height: 12vw;
+  width: 12vw;
+  margin-left: 15vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 0;
+}
+.java1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
+  
 }
 .python{
   position: absolute;
@@ -102,6 +142,25 @@ code {
   background-color: aliceblue;
   border-radius: 50%;
   display: inline-block;
+  z-index: 1;
+}
+.python:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
+}
+.py1{
+  position: absolute;
+  height: 12vw;
+  width: 12vw;
+  margin-left: 34vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 0;
+}
+.py1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
 }
 .react{
   height: 12vw;
@@ -111,6 +170,24 @@ code {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
+  z-index: 1;
+}
+.react:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
+}
+.re1{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 53vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.re1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
 }
 .node{
   height: 12vw;
@@ -120,6 +197,24 @@ code {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
+  z-index: 1;
+}
+.node:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
+}
+.n1{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 70vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.n1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
 }
 .sql{
   height: 12vw;
@@ -129,6 +224,24 @@ code {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
+  z-index: 1;
+}
+.sql:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
+}
+.s1{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 15vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.s1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
 }
 .kotlin{
   height: 12vw;
@@ -138,6 +251,24 @@ code {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
+  z-index: 1;
+}
+.kotlin:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
+}
+.k1{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 34vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.k1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
 }
 .cplusplus{
   height: 12vw;
@@ -147,6 +278,24 @@ code {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
+  z-index: 1;
+}
+.cplusplus:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
+}
+.c1{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 53vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.c1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
 }
 .php{
   height: 12vw;
@@ -156,45 +305,73 @@ code {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
+  z-index: 1;
+}
+.p1{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 70vw;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.p1 p{
+  font-size: 3vw;
+  margin-top: 3.8vw;
+
+}
+.php:hover{
+  animation: slowly-hide 1000ms;
+  opacity: 0;
 }
 .javaimg{
   margin-top: 7%;
   width: 55%;
 }
+
 .pyimg{
   margin-top: 17%;
   width: 65%;
 }
+
 .logoimg{
   margin-top: 8%;
   margin-left: -10%;
   width: 120%;
 }
+
 .nodeimg{
   margin-top: 10%;
   width: 70%;
 }
+
 .sqlimg{
   margin-top: 30%;
   width: 90%;
 }
+
 .kotimg{
   margin-top: 23%;
   width: 55%;
 }
+
 .cimg{
   margin-top: 16%;
   width: 60%;
 }
+
 .phpimg{
   margin-top: 30%;
   width: 80%;
 }
+
 .bouqimg{
   position: absolute;
-  margin-left: 20%;
+  margin-left:20%;
   margin-top: 50%;
   width: 30%;
+  animation: bouq-flow infinite 5000ms;
 }
 .text2{
   width: 100%;
@@ -204,11 +381,12 @@ code {
 }
 .projs{
   font-size: xxx-large;
-  margin-bottom: 100vw;
+  margin-bottom: 110vw;
 }
 table, td, th {
   border: 2px solid;
   font-family: 'tt', serif;
+  font-size: 3vw;
 }
 
 table {
@@ -230,10 +408,164 @@ table {
   margin-left: 38%;
 }
 .contactBar{
-  height: 10%; 
+  height: 11vw; 
   position: fixed; 
   bottom:0%;
   width:100%; 
   background-color: #bbb69f; 
   opacity: 1;
+  z-index: 10;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-in2 {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes slide-in3 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+    transform: rotate(100deg);
+
+  }
+}
+@keyframes slide-in4 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+    transform: rotate(180deg);
+
+  }
+}
+@keyframes slide-in5 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+    transform: rotate(-30deg);
+
+  }
+}
+@keyframes ivy-flow {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(100%);
+    transform: rotate(-10deg);
+  }
+  100%{
+    transform: translateX(100%);
+    transform: rotate(0deg);
+  }
+}
+@keyframes bouq-flow {
+  50% {
+    transform: rotate(-10deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+@keyframes slowly-hide {
+  0%{
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100%{
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+.contactimg{
+  width: 10%;
+  z-index: 3;
+}
+.plantsinarow{
+  margin-top: -14vw;
+  width: 70%;
+}
+.git{
+  width: 5%;
+  position: absolute;
+  margin-top: 4vw;
+  margin-left: -63.9vw;
+}
+.gitp{
+  margin-top: 5vw;
+  margin-left: -53.8vw;
+  font-size: 1vw;
+}
+.lin{
+  position: absolute;
+  width: 3.5%;
+  margin-top: -6.9vw;
+  margin-left: -15.7vw;
+}
+.linp{
+  margin-top: -2.5vw;
+  margin-left: -28vw;
+  font-size: 1vw;
+
+}
+.insta{
+  position: absolute;
+  width: 3.7%;
+  margin-top: -6.9vw;
+  margin-left: -3.5vw;
+}
+.instap{
+  margin-top: -2.5vw;
+  margin-left: -3vw;
+  font-size: 1vw;
+}
+.gmail{
+  position: absolute;
+  width: 4%;
+  margin-top: -6.8vw;
+  margin-left: 6.7vw;
+}
+.gp{
+  font-size: 1vw;
+  margin-top: -2.5vw;
+  margin-left: 17.5vw;
+}
+.tik{
+  position: absolute;
+  width: 6%;
+  margin-top: -8vw;
+  margin-left: 16vw;
+}
+.tikp{
+  margin-top: -2.4vw;
+  font-size: 1vw;
+  margin-left: 38vw;
+}
+.disc{
+  position: absolute;
+  width: 5%;
+  margin-top: -6.8vw;
+  margin-left: 26.7vw;
+}
+.discp{
+  margin-top: -2.4vw;
+  margin-left: 58.5vw;
+  font-size: 1vw;
 }
