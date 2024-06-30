@@ -46,7 +46,6 @@ function App() {
             <img className="nodeimg" src={node}/>
           </div>
         </div>
-        <br></br><br></br><br></br><br></br>
         <div className='row2'>
           <div className='sql'>
             <img className="sqlimg" src={sql}/>
@@ -64,7 +63,8 @@ function App() {
       </div>
       <br></br><br></br><br></br><br></br>
       <div className='projs'>
-        <h1 className='text2' style={{fontWeight:'400'}}>Highlighted Projects</h1>
+        <h2 className='text2'>Highlighted Projects</h2>
+        <br></br>
         <img className="bouqimg" src={bouquet}/>
         <table className='lockedin'>
           <tr>
@@ -82,7 +82,9 @@ function App() {
             <td style={{fontSize:"1.8vw"}}>A multiplayer truth or dare game for Android phones powered by Firebase Realtime Database and Gemini API.</td>
           </tr>
         </table>
-
+      </div>
+      <div className='contactBar'>
+        <h1>hiiiii</h1>
       </div>
     </div>
   );
