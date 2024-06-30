@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
+
+body {
+  background-color: #c9cfbd;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.name{
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: xxx-large;
+}
+.topSection{
+  height: 60vw;
+}
+.desc{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: large;
+}
+
+.branch1{
+  position: absolute;
+  margin-left: -55%;
+  margin-top: -5%;
+  width: 35%;
+}
+.branch2{
+  position: absolute;
+  margin-top: -2%;
+  margin-left: 5%;
+  width: 23%;
+}
+.branch3{
+  position: absolute;
+  margin-top: 15%;
+  margin-left: 40%;
+  width: 13%;
+  transform: rotate(100deg);
+}
+.branch4{
+  position: absolute;
+  margin-top: 40%;
+  margin-left: 28%;
+  width: 30%;
+  transform: rotate(180deg);
+}
+.branch5{
+  position: absolute;
+  margin-top: 35%;
+  margin-left: -70%;
+  width: 30%;
+  transform: rotate(-30deg);
+}
+.ivy{
+  position: absolute;
+  margin-top: 0%;
+  margin-left: -50%;
+  width: 100%;
+}
+.frameSection{
+  position: absolute;
+  font-family: "Old Standard TT", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: xxx-large;
+}
+.text1{
+  width: 100%;
+  margin-left: 200%;
+}
+.java{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 50%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.python{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 110%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.react{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 170%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.node{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 225%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.sql{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 50%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.kotlin{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 110%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.cplusplus{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 170%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.php{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 225%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.javaimg{
+  margin-top: 7%;
+  width: 55%;
+}
+.pyimg{
+  margin-top: 17%;
+  width: 65%;
+}
+.logoimg{
+  margin-top: 8%;
+  margin-left: -10%;
+  width: 120%;
+}
+.nodeimg{
+  margin-top: 10%;
+  width: 70%;
+}
+.sqlimg{
+  margin-top: 30%;
+  width: 90%;
+}
+.kotimg{
+  margin-top: 23%;
+  width: 55%;
+}
+.cimg{
+  margin-top: 16%;
+  width: 60%;
+}
+.phpimg{
+  margin-top: 30%;
+  width: 80%;
+}
+.bouqimg{
+  margin-left: 16%;
+  margin-top: 50%;
+  position: absolute;
+}
+.text2{
+  width: 100%;
+  margin-left: -30%;
+  margin-top: 55%;
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xxx-large;
+  position: absolute;
+}
+
+table, td, th {
+  border: 2px solid;
+}
+
+table {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+  width: 20%;
+  border-collapse: collapse;
+}
+.lockedin{
+  position: absolute;
+  margin-top: 65%;
+  margin-left: 3%;
+}
+.swipeordare{
+  position: absolute;
+  margin-top: 65%;
+  margin-left: 38%;
+}
