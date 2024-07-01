@@ -18,6 +18,7 @@ import gmail from './gmaill.png';
 import tiktok from './tiktok-logo-on-transparent-background-free-vector-removebg-preview.png';
 import discord from './discord.png';
 import AnimatedCursor from "react-animated-cursor"
+import Arrow from './OCR-A_char_Greater-Than_Sign.svg-removebg-preview.png'
 import { useRef } from 'react';
 
 import './App.css';
@@ -169,10 +170,10 @@ function App() {
       <div className="experience">
         <h2 className="text4">Experience</h2>
         <button className="carousel-arrow carousel-arrow--prev" onClick={() => handleCarouselMove(false)}>
-          &#8249;
+          <img className= 'prevArrow' src={Arrow}/>
         </button>
         <button className="carousel-arrow carousel-arrow--next" onClick={handleCarouselMove}>
-          &#8250;
+          <img className= 'nextArrow' src={Arrow}/>
         </button>
         <div className="carousel-container" ref={carouselRef}>
           <div className="carousel-slide">
