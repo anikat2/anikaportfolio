@@ -18,10 +18,20 @@ import gmail from './gmaill.png';
 import tiktok from './tiktok-logo-on-transparent-background-free-vector-removebg-preview.png';
 import discord from './discord.png';
 import AnimatedCursor from "react-animated-cursor"
+import { useRef } from 'react';
 
 import './App.css';
 
 function App() {
+  const carouselRef = useRef(null);
+
+  const handleCarouselMove = (positive = true) => {
+    const slideWidth = carouselRef.current.firstChild.clientWidth;
+    carouselRef.current.scrollLeft = positive
+      ? carouselRef.current.scrollLeft + slideWidth
+      : carouselRef.current.scrollLeft - slideWidth;
+  };
+
   return (
     <div className="App">
       <AnimatedCursor
@@ -156,8 +166,50 @@ function App() {
         </a>
         <p className='discp'>hwisnfocnv</p>
       </div>
+      <div className="experience">
+        <h2 className="text4">Experience</h2>
+        <button className="carousel-arrow carousel-arrow--prev" onClick={() => handleCarouselMove(false)}>
+          &#8249;
+        </button>
+        <button className="carousel-arrow carousel-arrow--next" onClick={handleCarouselMove}>
+          &#8250;
+        </button>
+        <div className="carousel-container" ref={carouselRef}>
+          <div className="carousel-slide">
+          SBHS Robotics - President
+          </div>
+          <div className="carousel-slide">
+          CS Club - Vice President
+          </div>
+          <div className="carousel-slide">
+          Girls Who Code - Vice President
+          </div>
+          <div className="carousel-slide">
+          Viking Volunteers - President
+          </div>
+          <div className="carousel-slide">
+          WiStem - Education Lead
+          </div>
+          <div className="carousel-slide">
+          MIT Beaverworks - Microelectronics Student
+          </div>
+          <div className="carousel-slide">
+          Code4Tomorrow - C Project Lead
+          </div>
+          <div className="carousel-slide">
+          Built By Me - Engineering Teacher
+          </div>
+        </div>
+      </div>
     </div>
   );
+}
+const carousel = document.querySelector(".carousel-container");
+const slide = document.querySelector(".carousel-slide");
+
+function handleCarouselMove(positive = true) {
+  const slideWidth = slide.clientWidth;
+  carousel.scrollLeft = positive ? carousel.scrollLeft + slideWidth : carousel.scrollLeft - slideWidth;
 }
 
 function javaExp(){
