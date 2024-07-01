@@ -6,7 +6,13 @@
   font-family: 'tt'; /* Name your font family */
   src: url('./TT\ Ramillas\ Trial\ Light.ttf'); /* Locate the .ttf file within your directory*/
 }
+html {
+  --cursor-color: #333
+}
 
+html.dark-mode {
+  --cursor-color: #fff
+}
 body {
   font-family: 'tt', serif;
   background-color: #c9cfbd;
