@@ -668,6 +668,8 @@ main {
 }
 
 .carousel-slide {
+  width: 200px;
+  height: 200px;
   flex: 1 0 30%;
   border-radius: 10%;
   aspect-ratio: 1;
@@ -675,7 +677,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #7c9b7e;
   color: rgba(255, 255, 255, 0.63);
   scroll-snap-align: center;
   font-size: 2vw;
@@ -686,7 +687,6 @@ main {
     flex: 1 0 90%;
   }
 }
-
 footer {
   position: absolute;
   width: 100%;

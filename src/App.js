@@ -18,6 +18,7 @@ import gmail from './gmaill.png';
 import tiktok from './tiktok-logo-on-transparent-background-free-vector-removebg-preview.png';
 import discord from './discord.png';
 import AnimatedCursor from "react-animated-cursor"
+import carouselImg from "./carousel.png"
 import Arrow from './OCR-A_char_Greater-Than_Sign.svg-removebg-preview.png'
 import { useRef } from 'react';
 
@@ -175,9 +176,9 @@ function App() {
         <button className="carousel-arrow carousel-arrow--next" onClick={handleCarouselMove}>
           <img className= 'nextArrow' src={Arrow}/>
         </button>
-        <div className="carousel-container" ref={carouselRef}>
-          <div className="carousel-slide">
-          SBHS Robotics - President
+        <div className="carousel-container"  ref={carouselRef}>
+          <div className="carousel-slide" style={{backgroundImage: "url("+{carouselImg}+")"}}>
+              SBHS Robotics - President
           </div>
           <div className="carousel-slide">
           CS Club - Vice President
