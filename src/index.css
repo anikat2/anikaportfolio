@@ -668,7 +668,8 @@ main {
 }
 
 .carousel-slide {
-  width: 200px;
+  background-color: #aa91c4;
+  width: 250px;
   height: 200px;
   flex: 1 0 30%;
   border-radius: 10%;
