@@ -18,21 +18,36 @@ import gmail from './gmaill.png';
 import tiktok from './tiktok-logo-on-transparent-background-free-vector-removebg-preview.png';
 import discord from './discord.png';
 import AnimatedCursor from "react-animated-cursor"
-import carouselImg from "./carousel.png"
-import Arrow from './OCR-A_char_Greater-Than_Sign.svg-removebg-preview.png'
 import { useRef } from 'react';
+import { useState, useEffect } from "react"
+import exp from "./expflower.png"
 
 import './App.css';
 
 function App() {
   const carouselRef = useRef(null);
+  const roles = [
+    "FULL STACK DEVELOPER",
+    "ANDROID DEVELOPER",
+    "BAKER",
+    "ROBOTICS ENGINEER",
+  ]
 
-  const handleCarouselMove = (positive = true) => {
-    const slideWidth = carouselRef.current.firstChild.clientWidth;
-    carouselRef.current.scrollLeft = positive
-      ? carouselRef.current.scrollLeft + slideWidth
-      : carouselRef.current.scrollLeft - slideWidth;
-  };
+  const [role, setCurrentRole] = useState(roles[0]);
+
+  function setRandomName() {
+    const index = Math.floor(Math.random() * roles.length);
+    let newName = roles[index]
+    if (newName == role) { setRandomName() }
+    else { setCurrentRole(newName) }
+    return
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setRandomName()
+    }, 2000);
+  }, [role])
 
   return (
     <div className="App">
@@ -59,7 +74,7 @@ function App() {
 
           <br/><br/><br/><br/>
           <h1>Anika Thakur</h1>
-          <h8 className='desc'>FULL STACK DEVELOPER</h8>
+          <h8 className='desc'>{role}</h8>
         </div>
       </div>
       <div className='frameSection'>
@@ -168,50 +183,99 @@ function App() {
         </a>
         <p className='discp'>hwisnfocnv</p>
       </div>
-      <div className="experience">
+<div className="experience">
+        <img className="ivy2" src={exp}/>
         <h2 className="text4">Experience</h2>
-        <button className="carousel-arrow carousel-arrow--prev" onClick={() => handleCarouselMove(false)}>
-          <img className= 'prevArrow' src={Arrow}/>
-        </button>
-        <button className="carousel-arrow carousel-arrow--next" onClick={handleCarouselMove}>
-          <img className= 'nextArrow' src={Arrow}/>
-        </button>
-        <div className="carousel-container"  ref={carouselRef}>
-          <div className="carousel-slide" style={{backgroundImage: "url("+{carouselImg}+")"}}>
-              SBHS Robotics - President
+        <div className="receipts-container">
+          <div className="receipt">
+            <div className="receipt-header">
+              <div className="receipt-dots">• • • • • • • • • • • • • • • •</div>
+              <h3 className="receipt-title">ANIKA'S RESUME RECEIPTS</h3>
+              <div className="receipt-line"></div>
+            </div>
+            
+            <div className="receipt-body">
+              <div className="receipt-item">
+                <span className="item-label">POSITION:</span>
+                <span className="item-value">Software Engineering Intern</span>
+              </div>
+              <div className="receipt-item">
+                <span className="item-label">COMPANY:</span>
+                <span className="item-value">Bloomberg LP</span>
+              </div>
+              <div className="receipt-item">
+                <span className="item-label">DURATION:</span>
+                <span className="item-value">06/2025 - 08/2025</span>
+              </div>
+            </div>
+            <div className="receipt-footer">
+              <div className="receipt-line"></div>
+              <p className="receipt-thanks">THANK YOU!</p>
+              <div className="receipt-dots">• • • • • • • • • • • • • • • •</div>
+            </div>
           </div>
-          <div className="carousel-slide">
-          CS Club - Vice President
+
+          <div className="receipt">
+            <div className="receipt-header">
+              <div className="receipt-dots">• • • • • • • • • • • • • • • •</div>
+              <h3 className="receipt-title">ANIKA'S RESUME RECEIPTS</h3>
+              <div className="receipt-line"></div>
+            </div>
+            
+            <div className="receipt-body">
+              <div className="receipt-item">
+                <span className="item-label">POSITION:</span>
+                <span className="item-value">Quantitative Finance Programmer</span>
+              </div>
+              <div className="receipt-item">
+                <span className="item-label">ORGANIZATION:</span>
+                <span className="item-value">Smith Investment Fund</span>
+              </div>
+              <div className="receipt-item">
+                <span className="item-label">DURATION:</span>
+                <span className="item-value">10/2025 - Present</span>
+              </div>
+              <div className="receipt-line"></div>
+            </div>
+            
+            <div className="receipt-footer">
+              <p className="receipt-thanks">THANK YOU!</p>
+              <div className="receipt-dots">• • • • • • • • • • • • • • • •</div>
+            </div>
           </div>
-          <div className="carousel-slide">
-          Girls Who Code - Vice President
-          </div>
-          <div className="carousel-slide">
-          Viking Volunteers - President
-          </div>
-          <div className="carousel-slide">
-          WiStem - Education Lead
-          </div>
-          <div className="carousel-slide">
-          MIT Beaverworks - Microelectronics Student
-          </div>
-          <div className="carousel-slide">
-          Code4Tomorrow - C Project Lead
-          </div>
-          <div className="carousel-slide">
-          Built By Me - Engineering Teacher
+
+          <div className="receipt">
+            <div className="receipt-header">
+              <div className="receipt-dots">• • • • • • • • • • • • • • • •</div>
+              <h3 className="receipt-title">ANIKA'S RESUME RECEIPTS</h3>
+              <div className="receipt-line"></div>
+            </div>
+            
+            <div className="receipt-body">
+              <div className="receipt-item">
+                <span className="item-label">POSITION:</span>
+                <span className="item-value">Technology Team Member</span>
+              </div>
+              <div className="receipt-item">
+                <span className="item-label">ORGANIZATION:</span>
+                <span className="item-value">Bitcamp</span>
+              </div>
+              <div className="receipt-item">
+                <span className="item-label">DURATION:</span>
+                <span className="item-value">10/2025 - Present</span>
+              </div>
+              <div className="receipt-line"></div>
+            </div>
+            
+            <div className="receipt-footer">
+              <p className="receipt-thanks">THANK YOU!</p>
+              <div className="receipt-dots">• • • • • • • • • • • • • • • •</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
-const carousel = document.querySelector(".carousel-container");
-const slide = document.querySelector(".carousel-slide");
-
-function handleCarouselMove(positive = true) {
-  const slideWidth = slide.clientWidth;
-  carousel.scrollLeft = positive ? carousel.scrollLeft + slideWidth : carousel.scrollLeft - slideWidth;
 }
 
 function javaExp(){
