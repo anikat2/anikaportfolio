@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/anikaportfolio/static/css/main.62e066cc.css",
-    "main.js": "/anikaportfolio/static/js/main.4dbb007e.js",
+    "main.css": "/anikaportfolio/static/css/main.2b1aba06.css",
+    "main.js": "/anikaportfolio/static/js/main.3169ab36.js",
     "static/js/453.31230ab2.chunk.js": "/anikaportfolio/static/js/453.31230ab2.chunk.js",
-    "static/media/carousel.png": "/anikaportfolio/static/media/carousel.8034e20a24d419ad3ae8.png",
     "static/media/bouquet.png": "/anikaportfolio/static/media/bouquet.d5382222e02d1582dab2.png",
     "static/media/plants.png": "/anikaportfolio/static/media/plants.ec516730a752ff58cf27.png",
     "static/media/TT Ramillas Trial Light.ttf": "/anikaportfolio/static/media/TT Ramillas Trial Light.45835977ef470e20ba3f.ttf",
@@ -12,6 +11,7 @@
     "static/media/roses.png": "/anikaportfolio/static/media/roses.342c51e378d6eeef2938.png",
     "static/media/Kotlin_Icon-removebg-preview.png": "/anikaportfolio/static/media/Kotlin_Icon-removebg-preview.84c95c2d189c35d79ad7.png",
     "static/media/cpp_logo-removebg-preview.png": "/anikaportfolio/static/media/cpp_logo-removebg-preview.5676fde3651acb356133.png",
+    "static/media/expflower.png": "/anikaportfolio/static/media/expflower.a70b90666b45c4454238.png",
     "static/media/java.png": "/anikaportfolio/static/media/java.bb5ae515f0d7e9fd8151.png",
     "static/media/node-js-icon-454x512-nztofx17-removebg-preview.png": "/anikaportfolio/static/media/node-js-icon-454x512-nztofx17-removebg-preview.5f2e07d88936ff98e12f.png",
     "static/media/branch.png": "/anikaportfolio/static/media/branch.f716a45765d5aa4b1d18.png",
@@ -23,15 +23,14 @@
     "static/media/python.png": "/anikaportfolio/static/media/python.7a75ccda4df6498b459f.png",
     "static/media/image-removebg-preview (1).png": "/anikaportfolio/static/media/image-removebg-preview (1).63dfb3c1a4a2843b3250.png",
     "static/media/gmaill.png": "/anikaportfolio/static/media/gmaill.8268d334a2c0394c5bc5.png",
-    "static/media/OCR-A_char_Greater-Than_Sign.svg-removebg-preview.png": "/anikaportfolio/static/media/OCR-A_char_Greater-Than_Sign.svg-removebg-preview.5afc1560229cfc5cc23d.png",
     "static/media/logo.svg": "/anikaportfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/anikaportfolio/index.html",
-    "main.62e066cc.css.map": "/anikaportfolio/static/css/main.62e066cc.css.map",
-    "main.4dbb007e.js.map": "/anikaportfolio/static/js/main.4dbb007e.js.map",
+    "main.2b1aba06.css.map": "/anikaportfolio/static/css/main.2b1aba06.css.map",
+    "main.3169ab36.js.map": "/anikaportfolio/static/js/main.3169ab36.js.map",
     "453.31230ab2.chunk.js.map": "/anikaportfolio/static/js/453.31230ab2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62e066cc.css",
-    "static/js/main.4dbb007e.js"
+    "static/css/main.2b1aba06.css",
+    "static/js/main.3169ab36.js"
   ]
 }
