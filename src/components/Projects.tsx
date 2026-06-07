@@ -26,7 +26,7 @@ export function Projects() {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
-            <span className="project-card__link">Take a peek →</span>
+            <span className="project-card__link">Check it out →</span>
           </a>
         ))}
       </div>

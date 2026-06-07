@@ -96,19 +96,25 @@ export const projects = [
     title: 'Squarenetes',
     tags: ['Python', 'Docker', 'Kubernetes'],
     description: 'Split large enterprise-scale prompts into smaller nodes to process large LLM requests faster, then joined the results together with a custom orchestration layer.',
-    link: '#',
+    link: 'https://github.com/anikat2/squarenetes',
   },
   {
     title: 'LockedIn (Technica 2025)',
     tags: ['Javascript', 'Firebase', 'PropelAuth'],
     description: 'Built a chrome extension to block distracting websites and track user focus, specifically curated to optimize studying for students with ADHD.',
-    link: '#',
+    link: 'https://github.com/anikat2/lockedin',
   },
   {
     title: 'RoyalsLib',
     tags: ['C++', 'C#', 'Pros'],
     description: 'Motion planning library using A* and RAMSETE to generate an optimal route for the VEX Robotics competition, scoring the most points and executing the path efficiently.',
     link: '#',
+  },
+  {
+    title: 'AquaRo(ver)',
+    tags: ['C++', 'Python'],
+    description: 'Sea surface traversing robot with LIDAR capabilities to retrieve trash from the ocean surface, store it onboard, and return it to a designated location for collection.',
+    link: 'https://youtu.be/tayNV7yiFQA?si=Fedqef8u0nNdlDoR',
   }
 ]
 
