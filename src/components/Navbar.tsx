@@ -11,10 +11,15 @@ export function Navbar() {
   const onHome = location.pathname === '/'
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   const goToSection = (id: string) => {
     setMenuOpen(false)
@@ -28,8 +33,8 @@ export function Navbar() {
   return (
     <header className={`navbar ${scrolled || !onHome ? 'navbar--scrolled' : ''}`}>
       <Link to="/" className="navbar__logo" onClick={() => setMenuOpen(false)}>
-        <span className="navbar__logo-mark" />
-        {site.name.split(' ')[0]}
+        <span className="navbar__logo-icon">AT</span>
+        <span className="navbar__logo-text">{site.name}</span>
       </Link>
 
       <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
@@ -42,12 +47,11 @@ export function Navbar() {
 
       <button
         type="button"
-        className="navbar__burger"
+        className={`navbar__burger ${menuOpen ? 'navbar__burger--open' : ''}`}
         aria-label="Toggle menu"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen((o) => !o)}
       >
-        <span />
         <span />
         <span />
       </button>

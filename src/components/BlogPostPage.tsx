@@ -26,7 +26,7 @@ export function BlogPostPage() {
           ← Back to blog
         </Link>
 
-        {post.coverImage && (
+        {post.coverImage && !isRecipe && (
           <BlogImage
             src={post.coverImage.src}
             alt={post.coverImage.alt}
@@ -46,7 +46,7 @@ export function BlogPostPage() {
         </header>
 
         <div className="blog-post__body glass-card">
-          <BlogContent blocks={post.content} />
+          <BlogContent blocks={post.content} isRecipe={isRecipe} />
         </div>
       </div>
       <Footer />

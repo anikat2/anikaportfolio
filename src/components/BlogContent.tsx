@@ -3,9 +3,10 @@ import { BlogImage } from './BlogImage'
 
 interface BlogContentProps {
   blocks: BlogBlock[]
+  isRecipe?: boolean
 }
 
-export function BlogContent({ blocks }: BlogContentProps) {
+export function BlogContent({ blocks, isRecipe = false }: BlogContentProps) {
   return (
     <div className="blog-content">
       {blocks.map((block, i) => {
@@ -23,6 +24,7 @@ export function BlogContent({ blocks }: BlogContentProps) {
               </ul>
             )
           case 'image':
+            if (isRecipe) return null
             return (
               <BlogImage
                 key={i}

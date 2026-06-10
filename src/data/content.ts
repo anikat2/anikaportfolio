@@ -141,6 +141,67 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'tandoori_paneer',
+    date: 'June 5, 2026',
+    title: 'Tandoori Paneer',
+    excerpt: 'My recipe for a Gyro-inspired tandoori paneer bowl!',
+    readTime: '2 min',
+    tag: 'Recipe',
+    format: 'recipe',
+    content: [
+      {
+        type: 'recipe-info',
+        prepTime: '40 min',
+        cookTime: '10 min',
+        servings: '1-2',
+      },
+      {
+        type: 'ingredients',
+        groups: [
+          {
+            title: 'Paneer',
+            items: [
+              '300g paneer (about 1 block), cut into small cubes',
+              '1/2 cup plain yogurt',
+              '6 tablespoons tandoori masala',
+              '1–2 teaspoons kashmiri chili powder',
+            ],
+          },
+          {
+            title: 'Rice',
+            items: [
+              '1 cup pre-cooked basmati rice',
+              '1 tablespoon ghee',
+              '1/2 teaspoon cumin seeds',
+              '1/4 teaspoon turmeric',
+              '3 tablespoons dried onion',
+              'Salt to taste',
+            ],
+          },
+          {
+            title: 'Sauce',
+            items: [
+              '1 cup mayonnaise',
+              '1 tablespoon garlic',
+              'A splash of lemon juice',
+              '1/2 teaspoon salt',
+            ],
+          },
+        ],
+      },
+      {
+        type: 'steps',
+        steps: [
+          'Create the paneer marinade by combining the yogurt, tandoori masala, and chili powder in a bowl. Add the paneer cubes and mix until fully coated. Marinate for at least 20 minutes, but no longer than 40 minutes to prevent the paneer from becoming too soft.',
+          'While the paneer marinates, prepare the rice. Heat ghee over medium heat, add cumin seeds and onion, then turmeric and salt. Stir in the pre-cooked rice and cook until heated through and well coated.',
+          'Cook the paneer in a tawa or skillet over medium-high heat until charred on all sides, about 5–7 minutes. You can also broil it in the oven for a similar effect.',
+          'While the paneer cooks, prepare the sauce by mixing mayonnaise, garlic, lemon juice, and salt in a bowl.',
+          'Assemble the bowl with spiced rice as the base, tandoori paneer on top, and a drizzle of garlic mayo. Garnish with fresh cilantro or sliced onions if desired.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'machine_vision',
     date: 'June 4, 2026',
     title: 'Machine Vision Fundamentals',
@@ -223,73 +284,6 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
-  {
-    slug: 'tandoori_paneer',
-    date: 'June 5, 2026',
-    title: 'Tandoori Paneer',
-    excerpt: 'My recipe for a Gyro-inspired tandoori paneer bowl!',
-    readTime: '2 min',
-    tag: 'Recipe',
-    format: 'recipe',
-    coverImage: {
-      src: '/blog/tandoori-paneer.jpg',
-      alt: 'Tandoori paneer bowl with spiced rice and garlic mayo',
-      caption: 'Tandoori paneer bowl with spiced rice and garlic mayo',
-    },
-    content: [
-      {
-        type: 'recipe-info',
-        prepTime: '40 min',
-        cookTime: '10 min',
-        servings: '1-2',
-      },
-      {
-        type: 'ingredients',
-        groups: [
-          {
-            title: 'Paneer',
-            items: [
-              '300g paneer (about 1 block), cut into small cubes',
-              '1/2 cup plain yogurt',
-              '6 tablespoons tandoori masala',
-              '1–2 teaspoons kashmiri chili powder',
-            ],
-          },
-          {
-            title: 'Rice',
-            items: [
-              '1 cup pre-cooked basmati rice',
-              '1 tablespoon ghee',
-              '1/2 teaspoon cumin seeds',
-              '1/4 teaspoon turmeric',
-              '3 tablespoons dried onion',
-              'Salt to taste',
-            ],
-          },
-          {
-            title: 'Sauce',
-            items: [
-              '1 cup mayonnaise',
-              '1 tablespoon garlic',
-              'A splash of lemon juice',
-              '1/2 teaspoon salt',
-            ],
-          },
-        ],
-      },
-      {
-        type: 'steps',
-        steps: [
-          'Create the paneer marinade by combining the yogurt, tandoori masala, and chili powder in a bowl. Add the paneer cubes and mix until fully coated. Marinate for at least 20 minutes, but no longer than 40 minutes to prevent the paneer from becoming too soft.',
-          'While the paneer marinates, prepare the rice. Heat ghee over medium heat, add cumin seeds and onion, then turmeric and salt. Stir in the pre-cooked rice and cook until heated through and well coated.',
-          'Cook the paneer in a tawa or skillet over medium-high heat until charred on all sides, about 5–7 minutes. You can also broil it in the oven for a similar effect.',
-          'While the paneer cooks, prepare the sauce by mixing mayonnaise, garlic, lemon juice, and salt in a bowl.',
-          'Assemble the bowl with spiced rice as the base, tandoori paneer on top, and a drizzle of garlic mayo. Garnish with fresh cilantro or sliced onions if desired.',
-        ],
-      },
-    ],
-  },
-
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

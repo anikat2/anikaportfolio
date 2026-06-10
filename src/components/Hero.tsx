@@ -1,5 +1,5 @@
 import { site } from '../data/content'
-import { HeroCupcakeBackdrop } from './HeroCupcakeBackdrop'
+import { ConstellationBackground } from './graphics/ConstellationBackground'
 
 export function Hero() {
   const scrollTo = (id: string) => {
@@ -8,25 +8,34 @@ export function Hero() {
 
   return (
     <section id="hero" className="hero">
-      <div className="hero__bg">
-        <HeroCupcakeBackdrop />
-      </div>
+      <ConstellationBackground />
+      <div className="hero__overlay" aria-hidden="true" />
 
-      <div className="hero__content">
-        <h1>
-          Hey, I&apos;m <span className="gradient-text">{site.name}</span>!
-        </h1>
-        <p className="hero__role">{site.role}</p>
-        {site.tagline && <p className="hero__tagline">{site.tagline}</p>}
-        <div className="hero__actions">
-          <button type="button" className="btn btn--primary" onClick={() => scrollTo('projects')}>
-            Projects
-          </button>
-          <button type="button" className="btn btn--ghost" onClick={() => scrollTo('blog')}>
-            Blog
-          </button>
+      <div className="hero__layout">
+        <div className="hero__content">
+          <p className="hero__eyebrow">
+            <span className="hero__eyebrow-star">✦</span>
+            {site.location}
+          </p>
+
+          <h1 className="hero__title">
+            <span className="hero__name" tabIndex={0}>
+              <span className="hero__name-text">{site.name}</span>
+            </span>
+          </h1>
+
+          <p className="hero__role">{site.role}</p>
+          <p className="hero__tagline">{site.tagline}</p>
+
+          <div className="hero__actions">
+            <button type="button" className="btn btn--primary btn--lg" onClick={() => scrollTo('projects')}>
+              View projects
+            </button>
+            <button type="button" className="btn btn--ghost btn--lg" onClick={() => scrollTo('contact')}>
+              Get in touch
+            </button>
+          </div>
         </div>
-        <p className="hero__hint">scroll to explore ↓</p>
       </div>
     </section>
   )

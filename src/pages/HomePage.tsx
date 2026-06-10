@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { scrollToSection } from '../utils/scroll'
 import { About } from '../components/About'
 import { Blog } from '../components/Blog'
 import { Contact } from '../components/Contact'
@@ -13,13 +14,12 @@ export function HomePage() {
   const location = useLocation()
 
   useEffect(() => {
-    const scrollTo = (location.state as { scrollTo?: string } | null)?.scrollTo
-    if (!scrollTo) return
+    const id = (location.state as { scrollTo?: string } | null)?.scrollTo
+    if (!id) return
 
-    requestAnimationFrame(() => {
-      document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' })
-    })
-  }, [location.state])
+    const timer = window.setTimeout(() => scrollToSection(id), 100)
+    return () => window.clearTimeout(timer)
+  }, [location.key, location.state])
 
   return (
     <>

@@ -1,32 +1,36 @@
 import { projects } from '../data/content'
+import { SectionArt } from './graphics/SectionArt'
 import { SectionHeader } from './SectionHeader'
 
-const accentColors = ['coral', 'mango', 'teal', 'lavender'] as const
+const accents = ['cyan', 'violet', 'pink', 'amber', 'green'] as const
+const sizes = ['large', 'normal', 'normal', 'normal', 'large'] as const
 
 export function Projects() {
   return (
     <section id="projects" className="section projects">
-      <SectionHeader
-        title="Projects"
-      />
+      <SectionArt variant="projects" />
+      <SectionHeader label="" title="Selected work" />
 
-      <div className="projects__grid">
+      <div className="bento">
         {projects.map((project, i) => (
           <a
             key={project.title}
             href={project.link}
-            className="project-card glass-card"
-            style={{ animationDelay: `${i * 90}ms` }}
+            target={project.link.startsWith('http') ? '_blank' : undefined}
+            rel={project.link.startsWith('http') ? 'noreferrer' : undefined}
+            className={`bento__card bento__card--${sizes[i]} bento__card--${accents[i % accents.length]}`}
+            style={{ animationDelay: `${i * 70}ms` }}
           >
-            <span className={`project-card__accent project-card__accent--${accentColors[i % accentColors.length]}`} aria-hidden="true" />
+            <div className="bento__glow" aria-hidden="true" />
+            <div className="bento__index">0{i + 1}</div>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <div className="project-card__tags">
+            <div className="bento__tags">
               {project.tags.map((tag) => (
                 <span key={tag}>{tag}</span>
               ))}
             </div>
-            <span className="project-card__link">Check it out →</span>
+            <span className="bento__link">Explore →</span>
           </a>
         ))}
       </div>

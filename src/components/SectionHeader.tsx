@@ -1,14 +1,16 @@
 interface SectionHeaderProps {
+  label: string
   title: string
   subtitle?: string
 }
 
-export function SectionHeader({ title, subtitle }: SectionHeaderProps) {
+export function SectionHeader({ label, title, subtitle }: SectionHeaderProps) {
   return (
-    <div className="section__header">
-      <h2>{title}</h2>
-      <span className="section__underline" aria-hidden="true" />
-      {subtitle && <p className="section__subtitle">{subtitle}</p>}
-    </div>
+    <header className="section-header">
+      {label && <span className="section-header__label">{label}</span>}
+      <h2 className="section-header__title">{title}</h2>
+      {subtitle && <p className="section-header__subtitle">{subtitle}</p>}
+      <div className="section-header__line" aria-hidden="true" />
+    </header>
   )
 }
