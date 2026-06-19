@@ -6,7 +6,7 @@ const identityCards = [
   {
     icon: '⚙',
     title: 'Robotics',
-    desc: 'Motion planning, ROS, and autonomous systems — from VEX competitions to NASA research.',
+    desc: 'Motion planning, ROS, and autonomous systems through various means, from VEX competitions to NASA research.',
     accent: 'cyan',
   },
   {
@@ -18,7 +18,7 @@ const identityCards = [
   {
     icon: '✦',
     title: 'Culinary',
-    desc: 'Indian fusion baking and creative cooking — precision meets artistry off the keyboard.',
+    desc: 'Indian fusion baking and cooking.',
     accent: 'amber',
   },
 ]

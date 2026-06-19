@@ -13,10 +13,6 @@ export function Hero() {
 
       <div className="hero__layout">
         <div className="hero__content">
-          <p className="hero__eyebrow">
-            <span className="hero__eyebrow-star">✦</span>
-            {site.location}
-          </p>
 
           <h1 className="hero__title">
             <span className="hero__name" tabIndex={0}>

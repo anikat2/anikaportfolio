@@ -284,6 +284,62 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    
+    slug: 'gradient_boost',
+    date: 'June 18, 2026',
+    title: 'XGBoost and its Computational Finance Applications',
+    excerpt: 'Exploring the applications of XGBoost in computational finance.',
+    readTime: '6 min',
+    tag: 'Deep Dive',
+    format: 'article',
+    content: [
+      {
+        type: 'heading',
+        text: 'What is Gradient Boosting?',
+      },
+      {
+        type: 'paragraph',
+        text: 'Gradient boosting is a machine learning technique that classifies and regresses data using simple decision trees. Each tree is trained to correct the errors of the previous tree. It is typically regarded as one of the best algorithms for prediction for tabular datasets, making it a perfect fit for computational finance.'
+      },
+      {
+        type: 'heading',
+        text: 'What is XGBoost?',
+      },
+      {
+        type: 'paragraph',
+        text: 'XGBoost stands for Extreme Gradient Boosting, and is an open source library for implementing gradient boosting algorithms. Trees are built in parallel instead of sequentially to optimize compute time.'
+      },
+      {
+        type: 'paragraph',
+        text: 'LightGBM and BitBoost are some of its competitors. LightGBM is extremely fast, however is less tuned than XGBoost. CatBoost is used for messy data, but for computational finance we would prefer accuracy, as we typically use structured data.'
+      },
+      {
+        type: 'heading',
+        text: 'Applications of XGBoost in Computational Finance',
+      },
+      {
+        type: 'paragraph',
+        text:  'Gradient boosting, and by extension XGBoost, has been used to speed up numerical pricing for complex derivatives, ',
+      },
+      {
+        type: 'heading',
+        text: 'Sources',
+      },
+      {
+        type: 'paragraph',
+        text: '“What Is XGBoost?” NVIDIA Data Science Glossary, 13 May 2026, www.nvidia.com/en-us/glossary/xgboost/.'
+      },
+      {
+        type: 'paragraph',
+        text: 'Wong, Kay Jan. “CatBoost vs. LightGBM vs. XGBoost.” Towards Data Science, 2025, towardsdatascience.com/catboost-vs-lightgbm-vs-xgboost-c80f40662924/.'
+      },
+      {
+        type: 'paragraph',
+        text: ' Jesse Davis & Laurens Devos & Sofie Reyners & Wim Schoutens, . "Gradient boosting for quantitative finance," Journal of Computational Finance, Journal of Computational Finance.'
+      },
+    ],
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
