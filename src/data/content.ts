@@ -320,7 +320,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text:  'Gradient boosting, and by extension XGBoost, has been used to speed up numerical pricing for complex derivatives, ',
+        text:  'Gradient boosting, and by extension XGBoost, has been used to speed up numerical pricing for complex derivatives. It can also be used to calculate expected returns more accurately.',
       },
       {
         type: 'heading',
