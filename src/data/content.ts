@@ -320,7 +320,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text:  'Gradient boosting, and by extension XGBoost, has been used to speed up numerical pricing for complex derivatives. It can also be used to calculate expected returns more accurately.',
+        text:  'Gradient boosting, and by extension XGBoost, has been used to speed up numerical pricing for complex derivatives. It can also be used to calculate expected returns more accurately.'
       },
       {
         type: 'heading',
@@ -338,6 +338,78 @@ export const blogPosts: BlogPost[] = [
         type: 'paragraph',
         text: ' Jesse Davis & Laurens Devos & Sofie Reyners & Wim Schoutens, . "Gradient boosting for quantitative finance," Journal of Computational Finance, Journal of Computational Finance.'
       },
+    ],
+  },
+  {
+    
+    slug: '4wd_path_planning',
+    date: 'July 4, 2026',
+    title: '4 wheel drive path planning algorithms (RRT, Hybrid A*, RRT*)',
+    excerpt: 'Examining various path planning algorithms, specifically used for 4 wheel drivetrains',
+    readTime: '6 min',
+    tag: 'Deep Dive',
+    format: 'article',
+    content: [
+      {
+        type: 'heading',
+        text: 'What\'s path planning?',
+      },
+      {
+        type: 'paragraph',
+        text: 'Path planning is computationally determining the optimal, collision-free route for a robot to take to travel from point A to point B. Although some path planning algorithms can be used for multiple different robots, like arms and humanoids, some are more effective on certain builds.'
+      },
+      {
+        type: 'heading',
+        text: 'What is RRT (Rapidly-exploring Random Tree)?',
+      },
+      {
+        type: 'paragraph',
+        text: 'RRT is a sampling-based path planning algorithm, which means that it takes a random sample of the space it\'s in. Then, the algorithm uses control inputs, which are the constants the control algorithm (ex. PID, pure pursuit) determines and then drives the system towards a set of randomly selected points. Typically, we see point-to-point convergence, like when a programmer asks a robot to go from (x1, y1, z1) to (x2, y2, z2), and so the approach of directing towards a random set of points allows for adaptability in non-holonomic conditions.',
+      },
+      {
+        type: 'heading',
+        text: 'What\'s RRT*?'
+      },
+      {
+        type: 'paragraph',
+        text: 'RRT* is fundamentally RRT, but optimized to find the shortest path denoted by the asterisk, a common symbol for an optimized version of an algorithm. RRT*',
+      },
+      {
+        type: 'paragraph',
+        text: 'At every step, RRT* tracks a cost factor, which in robotics cases is primarily the distance travelled. If a new point is found that is closer to the goal/has a cheaper cost that the previously determined optimal point, then that new point becomes the optimal one.'
+      },
+      {
+        type: 'paragraph',
+        text: 'The second edition to RRT in RRT* is re-wiring, which is the process of checking if a new point is actually closer to the goal than the previously determined optimal point. If it is, then the new point becomes the optimal one, and the previous optimal point is re-wired to be a child of the new optimal point. This allows for a more efficient path to be found, as the algorithm can backtrack and find a better path if it finds a new point that is closer to the goal.',
+      },
+      {
+        type: 'heading',
+        text: 'What is A*?'
+      },
+      {
+        type: 'paragraph',
+        text: 'Unlike the previous 2 approaches, A* is a grid-based path planning algorithm, which means that the space it performs in is similar to a grid. A*, like RRT*, has a cost factor, which is the distance travelled, and a heuristic, which is an estimate of the distance from the current point to the goal. A* uses these two factors to determine the optimal path to take, and it does this by expanding the node with the lowest cost + heuristic value. This allows A* to find the optimal path in a more efficient manner than RRT and RRT*, as it can backtrack and find a better path if it finds a new point that is closer to the goal. However, it falls short in non-holonomic conditions, as it does not take into account the constraints of the robot, and so it may find a path that is not feasible for the robot to follow.',
+      },
+      {
+        type: 'heading',
+        text: 'Conclusion'
+      },
+      {
+        type: 'paragraph',
+        text: 'In conclusion, RRT and RRT* are sampling-based path planning algorithms that are more adaptable to non-holonomic conditions, while A* is a grid-based path planning algorithm that is more efficient in finding the optimal path in holonomic conditions. However, A* falls short in non-holonomic conditions, as it does not take into account the constraints of the robot. Therefore, for 4 wheel drive robots, RRT and RRT* are more suitable for path planning in non-straightforward environments, while A* is more suitable for path planning in straightforward environments. However, it is important to note that the choice of path planning algorithm ultimately depends on the specific requirements and constraints of the robot and the environment it operates in.',
+      },
+      {
+        type: 'heading',
+        text: 'Sources'
+      },
+      {
+        type: 'paragraph',
+        text: '"Rapidly-Exploring Random Trees: A New Tool for Path Planning", Steven M. LaValle, 1998'
+      },
+      {
+        type: 'paragraph',
+        text: 'Chin, Tim. “Robotic Path Planning: RRT and RRT*.” Medium, 26 Feb. 2019, theclassytim.medium.com/robotic-path-planning-rrt-and-rrt-212319121378.'
+      }
     ],
   },
 ]
