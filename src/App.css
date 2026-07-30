@@ -1,0 +1,1078 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap');
+
+:root {
+  --paper: #ece3d2;
+  --ink: #211f1a;
+  --muted-ink: #6f695e;
+  --vermillion: #a73a2a;
+  --line: rgba(33, 31, 26, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  padding: clamp(5.8rem, 9vw, 7.5rem) clamp(1.25rem, 4vw, 4rem) clamp(1.25rem, 4vw, 3.5rem);
+  background: var(--paper);
+}
+
+.fluid-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--paper);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.fluid-background::after {
+  position: absolute;
+  inset: 0;
+  opacity: 0.24;
+  background-image:
+    repeating-linear-gradient(92deg, transparent 0 7px, rgba(73, 63, 48, 0.045) 8px, transparent 9px),
+    repeating-linear-gradient(2deg, transparent 0 11px, rgba(255, 255, 255, 0.12) 12px, transparent 14px);
+  pointer-events: none;
+  content: "";
+  mix-blend-mode: multiply;
+}
+
+.fluid-background canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem clamp(1.25rem, 4vw, 4rem);
+  background: rgba(236, 227, 210, 0.88);
+  border-bottom: 1px solid rgba(33, 31, 26, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.monogram {
+  width: 2.65rem;
+  height: 2.65rem;
+  display: grid;
+  place-items: center;
+  color: #f5eee0;
+  background: var(--vermillion);
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.15rem;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(76, 34, 24, 0.14);
+}
+
+.monogram span {
+  transform: translateY(-0.06em);
+}
+
+.header-note {
+  margin: 0;
+  color: var(--muted-ink);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header-note span {
+  margin: 0 0.55rem;
+  color: var(--vermillion);
+}
+
+.portfolio-layout {
+  width: min(100%, 88rem);
+  min-height: calc(100svh - clamp(7rem, 12vw, 10rem));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(19rem, 0.76fr) minmax(29rem, 1.24fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: stretch;
+}
+
+.simulation-panel {
+  position: relative;
+  min-height: 43rem;
+  overflow: hidden;
+  border: 1px solid rgba(74, 66, 53, 0.32);
+  box-shadow: 0 18px 50px rgba(74, 57, 38, 0.08);
+}
+
+.simulation-panel::after {
+  position: absolute;
+  inset: 0;
+  border: 0.65rem solid rgba(236, 227, 210, 0.18);
+  pointer-events: none;
+  content: "";
+}
+
+.simulation-caption {
+  position: absolute;
+  z-index: 2;
+  right: 1.25rem;
+  bottom: 1.15rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted-ink);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.simulation-caption span:first-child {
+  color: var(--vermillion);
+}
+
+.content-panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 3vh, 2.5rem) 0 0;
+}
+
+.intro-mark {
+  margin: 0 0 1.2rem;
+  color: var(--vermillion);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(4rem, 7.4vw, 7.5rem);
+  font-weight: 500;
+  letter-spacing: -0.08em;
+  line-height: 0.88;
+}
+
+.hero-description {
+  margin: 1.5rem 0 0;
+  color: #3f3b34;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.rigidbody-demo {
+  position: relative;
+  height: clamp(9rem, 18vh, 12rem);
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+  overflow: hidden;
+  border: 1px solid rgba(74, 66, 53, 0.24);
+}
+
+.rigidbody-demo > span {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.7rem;
+  color: var(--muted-ink);
+  font-size: 0.54rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.projects {
+  margin-top: clamp(1.5rem, 3vh, 2.25rem);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-heading h2,
+.section-heading span {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.section-heading span {
+  color: var(--vermillion);
+}
+
+.project {
+  border-bottom: 1px solid var(--line);
+}
+
+.rigidbody {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.rigidbody canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.project-list {
+  height: min(27vh, 16rem);
+  min-height: 11rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--vermillion) rgba(33, 31, 26, 0.08);
+  scrollbar-width: thin;
+}
+
+.project-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.project-list::-webkit-scrollbar-track {
+  background: rgba(33, 31, 26, 0.08);
+}
+
+.project-list::-webkit-scrollbar-thumb {
+  background: var(--vermillion);
+}
+
+.project-copy,
+.project-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1rem 0 1.2rem;
+}
+
+.project-link {
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 180ms ease, padding 180ms ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  background: rgba(255, 252, 243, 0.42);
+  outline: none;
+}
+
+.project-number {
+  color: var(--muted-ink);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+
+.project h3 {
+  margin: -0.22rem 0 0.25rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  font-weight: 500;
+}
+
+.project p {
+  margin: 0;
+  color: var(--muted-ink);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.project-row {
+  position: relative;
+}
+
+.project-arrow {
+  margin-left: auto;
+  color: var(--vermillion);
+  font-size: 1rem;
+}
+
+.motion-section {
+  width: min(100%, 96rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3rem minmax(15rem, 0.7fr) minmax(24rem, 1.3fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  padding: clamp(6rem, 10vw, 10rem) clamp(1.25rem, 4vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+
+.motion-section {
+  align-items: center;
+}
+
+.section-index {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted-ink);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  writing-mode: vertical-rl;
+}
+
+.section-index span:first-child {
+  color: var(--vermillion);
+}
+
+.motion-copy h2 {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.experience-list {
+  height: min(52vh, 28rem);
+  min-height: 16rem;
+  margin-top: 1.75rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.75rem;
+  scrollbar-color: var(--vermillion) rgba(33, 31, 26, 0.08);
+  scrollbar-width: thin;
+}
+
+.experience-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.experience-list::-webkit-scrollbar-track {
+  background: rgba(33, 31, 26, 0.08);
+}
+
+.experience-list::-webkit-scrollbar-thumb {
+  background: var(--vermillion);
+}
+
+.experience-item {
+  padding: 1.15rem 0 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-item:first-child {
+  padding-top: 0.35rem;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 1rem;
+  margin-bottom: 0.55rem;
+  color: var(--muted-ink);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.experience-meta time {
+  color: var(--vermillion);
+}
+
+.experience-item h3 {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.experience-org {
+  margin: 0.35rem 0 0.65rem;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.experience-item > p:last-child {
+  margin: 0;
+  color: var(--muted-ink);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.interaction-note {
+  display: block;
+  margin-top: 2rem;
+  color: var(--vermillion);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.motion-demo {
+  width: min(100%, 39rem);
+  justify-self: end;
+  border: 1px solid rgba(74, 66, 53, 0.32);
+  box-shadow: 0 18px 50px rgba(74, 57, 38, 0.08);
+}
+
+.motion-planning {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.motion-planning canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.motion-planning-label {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.8rem;
+  color: var(--muted-ink);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.blog-section {
+  width: min(100%, 96rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3rem minmax(17rem, 0.8fr) minmax(25rem, 1.2fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: start;
+  padding: clamp(6rem, 10vw, 10rem) clamp(1.25rem, 4vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+
+.closing-copy h2 {
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(3rem, 5.5vw, 5.8rem);
+  font-weight: 500;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+}
+
+.closing-copy h2 span {
+  display: block;
+  margin-left: clamp(1.25rem, 4vw, 4rem);
+}
+
+.closing-lede {
+  max-width: 26rem;
+  margin: 2rem 0 0 clamp(1.25rem, 4vw, 4rem);
+  color: var(--muted-ink);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.blog-seal {
+  width: 3.4rem;
+  height: 3.4rem;
+  margin: 2.5rem 0 0 clamp(1.25rem, 4vw, 4rem);
+  display: grid;
+  place-items: center;
+  color: var(--paper);
+  background: var(--vermillion);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0 8px 20px rgba(94, 38, 28, 0.12);
+}
+
+.blog-list {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+}
+
+.blog-item {
+  position: relative;
+  width: 100%;
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(0rem, 2vw, 1.5rem);
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 180ms ease, padding 180ms ease;
+}
+
+.blog-item:hover {
+  padding-right: clamp(0.75rem, 3vw, 2.25rem);
+  padding-left: clamp(0.75rem, 3vw, 2.25rem);
+  background: rgba(255, 252, 243, 0.4);
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  color: var(--vermillion);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.blog-item h3 {
+  margin: 0 0 0.7rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.blog-item p {
+  margin: 0;
+  max-width: 32rem;
+  color: var(--muted-ink);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.blog-topic {
+  display: block;
+  margin-top: 1rem;
+  color: var(--muted-ink);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.blog-open {
+  position: absolute;
+  right: clamp(0rem, 2vw, 1.5rem);
+  bottom: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--vermillion);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.blog-reader {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(255, 252, 243, 0.2), transparent 35%),
+    var(--paper);
+}
+
+.reader-article {
+  width: min(100% - 2.5rem, 72rem);
+  margin: 0 auto;
+  padding: 0 0 clamp(5rem, 10vw, 9rem);
+}
+
+.reader-back {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 0 1rem;
+  color: var(--muted-ink);
+  background: linear-gradient(var(--paper) 70%, rgba(236, 227, 210, 0));
+  border: 0;
+  font: inherit;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.reader-back:hover,
+.reader-back:focus-visible {
+  color: var(--vermillion);
+  outline: none;
+}
+
+.reader-header {
+  max-width: 62rem;
+  padding: clamp(4rem, 9vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.reader-type {
+  margin: 0 0 1.25rem;
+  color: var(--vermillion);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.reader-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--muted-ink);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.reader-header h1 {
+  max-width: 60rem;
+  margin: 0;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.reader-header > p:last-child {
+  max-width: 40rem;
+  margin: 2rem 0 0;
+  color: var(--muted-ink);
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.reader-body {
+  width: min(100%, 46rem);
+  margin: 0 auto;
+  padding-top: clamp(3rem, 7vw, 6rem);
+}
+
+.reader-body section + section {
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.reader-body h2 {
+  margin: 0 0 1.25rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.reader-body p {
+  margin: 0;
+  color: #403c35;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+  line-height: 1.95;
+}
+
+.reader-body p + p {
+  margin-top: 1.25rem;
+}
+
+.reader-sources {
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.reader-sources ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted-ink);
+}
+
+.reader-sources li {
+  padding-left: 0.5rem;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.reader-sources li + li {
+  margin-top: 0.8rem;
+}
+
+.reader-sources a {
+  text-decoration-color: rgba(167, 58, 42, 0.45);
+  text-underline-offset: 0.2em;
+}
+
+.reader-sources a:hover {
+  color: var(--vermillion);
+}
+
+.contact-section {
+  width: min(100%, 96rem);
+  min-height: min(48rem, 82svh);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3rem minmax(18rem, 0.9fr) minmax(24rem, 1.1fr);
+  grid-template-rows: 1fr auto;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+  padding: clamp(6rem, 10vw, 9rem) clamp(1.25rem, 4vw, 4rem) 2rem;
+  color: var(--paper);
+  background: var(--ink);
+  box-shadow: 0 0 0 100vmax var(--ink);
+  clip-path: inset(0 -100vmax);
+}
+
+.contact-section .intro-mark,
+.contact-index span:first-child,
+.contact-label {
+  color: #cf5846;
+}
+
+.contact-section .section-index,
+.contact-section .closing-lede {
+  color: rgba(236, 227, 210, 0.62);
+}
+
+.contact-section .closing-lede {
+  margin-left: clamp(1.25rem, 4vw, 4rem);
+}
+
+.contact-links {
+  min-width: 0;
+  border-top: 1px solid rgba(236, 227, 210, 0.22);
+}
+
+.contact-link {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  color: var(--paper);
+  border-bottom: 1px solid rgba(236, 227, 210, 0.22);
+  text-decoration: none;
+  transition: padding 180ms ease, background-color 180ms ease;
+}
+
+.contact-link:not(.contact-link-pending):hover,
+.contact-link:not(.contact-link-pending):focus-visible {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  background: rgba(236, 227, 210, 0.07);
+  outline: none;
+}
+
+.contact-label {
+  flex: 0 0 5.5rem;
+  margin-bottom: 0;
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  flex: 1;
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  letter-spacing: -0.02em;
+}
+
+.contact-link-pending {
+  color: rgba(236, 227, 210, 0.52);
+}
+
+.contact-link .project-arrow {
+  margin-left: 0;
+  color: #cf5846;
+}
+
+.contact-footer {
+  grid-column: 2 / -1;
+  margin: 3rem 0 0;
+  padding-top: 1.25rem;
+  color: rgba(236, 227, 210, 0.44);
+  border-top: 1px solid rgba(236, 227, 210, 0.16);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-footer span {
+  margin: 0 0.6rem;
+  color: #cf5846;
+}
+
+.closing-grid {
+  width: min(100%, 96rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  border-top: 1px solid var(--line);
+}
+
+.closing-grid .blog-section,
+.closing-grid .contact-section {
+  width: 100%;
+  min-height: 48rem;
+  margin: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 2.25rem;
+  align-content: start;
+  padding: clamp(3rem, 5vw, 5rem);
+  border: 0;
+}
+
+.closing-grid .blog-section {
+  border-right: 1px solid var(--line);
+}
+
+.closing-grid .contact-section {
+  box-shadow: none;
+  clip-path: none;
+}
+
+.closing-grid .section-index {
+  align-self: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  writing-mode: horizontal-tb;
+}
+
+.closing-grid .closing-copy h2 {
+  font-size: clamp(2.7rem, 4.3vw, 4.7rem);
+}
+
+.closing-grid .closing-copy h2 span,
+.closing-grid .closing-lede,
+.closing-grid .blog-seal {
+  margin-left: 0;
+}
+
+.closing-grid .blog-seal {
+  display: none;
+}
+
+.closing-grid .blog-list,
+.closing-grid .contact-links {
+  align-self: end;
+}
+
+.closing-grid .contact-footer {
+  grid-column: 1;
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .portfolio-layout {
+    grid-template-columns: minmax(15rem, 0.8fr) minmax(22rem, 1.2fr);
+    gap: 2.5rem;
+  }
+
+  .motion-section {
+    grid-template-columns: 2rem minmax(12rem, 0.65fr) minmax(20rem, 1.35fr);
+    gap: 2rem;
+  }
+
+  .blog-section,
+  .contact-section {
+    grid-template-columns: 2rem minmax(12rem, 0.65fr) minmax(20rem, 1.35fr);
+    gap: 2rem;
+  }
+
+  .closing-grid .blog-section,
+  .closing-grid .contact-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-note {
+    max-width: 9rem;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  .header-note span {
+    display: none;
+  }
+
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .simulation-panel {
+    width: min(100%, 26rem);
+    min-height: min(140vw, 40rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(3.6rem, 17vw, 6.5rem);
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .content-panel {
+    padding: 0;
+  }
+
+  .projects {
+    margin-top: 2.5rem;
+  }
+
+  .project-list {
+    height: 23rem;
+  }
+
+  .motion-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .blog-section,
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-section {
+    min-height: 100svh;
+    grid-template-rows: auto;
+    align-content: center;
+    padding-top: 5rem;
+  }
+
+  .closing-copy h2 span,
+  .closing-lede {
+    margin-left: 0;
+  }
+
+  .blog-seal {
+    margin-left: 0;
+  }
+
+  .section-index {
+    flex-direction: row;
+    justify-content: flex-start;
+    writing-mode: horizontal-tb;
+  }
+
+  .motion-demo {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .experience-list {
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .contact-link {
+    flex-wrap: wrap;
+  }
+
+  .contact-label {
+    flex-basis: 100%;
+  }
+
+  .contact-footer {
+    grid-column: 1;
+    margin-top: 1rem;
+    line-height: 1.7;
+  }
+
+  .closing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .closing-grid .blog-section,
+  .closing-grid .contact-section {
+    min-height: auto;
+    padding: 4rem 1.25rem;
+  }
+
+  .closing-grid .blog-section {
+    border-right: 0;
+  }
+
+  .closing-grid .contact-section {
+    min-height: 100svh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

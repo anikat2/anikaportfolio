@@ -1,161 +1,70 @@
-# Publishing the Portfolio to GitHub Pages
+# Getting Started with Create React App
 
-## Normal Workflow
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-After making changes to the portfolio:
+## Available Scripts
 
-### 1. Commit changes to main
+In the project directory, you can run:
 
-```bash
-git add .
-git commit -m "Describe your changes"
-git push origin main
-```
+### `npm start`
 
-### 2. Deploy to GitHub Pages
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```bash
-npm run deploy
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-This command automatically:
+### `npm test`
 
-1. Builds the project (`npm run build`)
-2. Generates the production files in `dist/`
-3. Pushes the built files to the `gh-pages` branch
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 3. Wait for GitHub Pages
+### `npm run build`
 
-GitHub Pages usually takes 30–120 seconds to update.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Visit:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```text
-https://anikat2.github.io/anikaportfolio/
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Refresh the page after a minute if changes do not appear immediately.
+### `npm run eject`
 
----
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Important Rules
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### DO NOT merge main into gh-pages
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Never run:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-```bash
-git checkout gh-pages
-git merge main
-```
+## Learn More
 
-The `gh-pages` branch is automatically generated from the `dist` folder and should not be edited manually.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### DO NOT edit files on gh-pages
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Keep all source code changes on the `main` branch.
+### Code Splitting
 
-Examples:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-```text
-src/
-public/
-package.json
-vite.config.ts
-```
+### Analyzing the Bundle Size
 
-These belong on `main`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### DO NOT manually copy files into gh-pages
+### Making a Progressive Web App
 
-Use:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```bash
-npm run deploy
-```
+### Advanced Configuration
 
-instead.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
----
+### Deployment
 
-## First-Time Setup (Already Done)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Repository remote:
+### `npm run build` fails to minify
 
-```bash
-git remote add origin https://github.com/anikat2/anikaportfolio.git
-```
-
-Vite config:
-
-```ts
-export default defineConfig({
-  base: '/anikaportfolio/',
-  plugins: [react()],
-})
-```
-
-Deployment script in package.json:
-
-```json
-"deploy": "gh-pages -d dist"
-```
-
----
-
-## Complete Deployment Checklist
-
-```bash
-git checkout main
-git pull origin main
-
-git add .
-git commit -m "Update portfolio"
-git push origin main
-
-npm run deploy
-```
-
-Then visit:
-
-```text
-https://anikat2.github.io/anikaportfolio/
-```
-
----
-
-## Troubleshooting
-
-### White page after deploy
-
-Check:
-
-```bash
-npm run build
-```
-
-for errors.
-
-Verify `vite.config.ts` contains:
-
-```ts
-base: '/anikaportfolio/'
-```
-
-### GitHub Pages not updating
-
-Wait 1–2 minutes and hard refresh:
-
-```text
-Ctrl + Shift + R
-```
-
-### Accidentally switched to gh-pages
-
-Return to main:
-
-```bash
-git checkout main
-```
-
-Never make portfolio edits directly on `gh-pages`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
