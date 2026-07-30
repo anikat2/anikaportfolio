@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/anikaportfolio/static/css/main.248f70da.css",
+    "main.js": "/anikaportfolio/static/js/main.9e6368e8.js",
+    "static/js/453.26d03257.chunk.js": "/anikaportfolio/static/js/453.26d03257.chunk.js",
+    "index.html": "/anikaportfolio/index.html",
+    "main.248f70da.css.map": "/anikaportfolio/static/css/main.248f70da.css.map",
+    "main.9e6368e8.js.map": "/anikaportfolio/static/js/main.9e6368e8.js.map",
+    "453.26d03257.chunk.js.map": "/anikaportfolio/static/js/453.26d03257.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.248f70da.css",
+    "static/js/main.9e6368e8.js"
+  ]
+}
